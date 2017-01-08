@@ -3,11 +3,13 @@ import chunk
 
 class World:
     def __init__(self, w, h):
-        self.chunks = [[]]
-        self.particles
-        for x in xrange(0, w-1):
-            for y in xrange(0, h-1)
-                self.chunks[x][y] = Chunk(x, y)
+        self.chunks = []
+
+        for x in xrange(0, w):
+            hwe = [] # hwe for lack of a better name
+            for y in xrange(0, h):
+                hwe.append(chunk.Chunk(x, y))
+            self.chunks.append(hwe)
 
     def surrounding(self, doself): 
         out = []
@@ -29,4 +31,4 @@ class World:
         out.grabbedchunks.append(allchunks[self.x  ][self.y-1]) #6  0. -1
         out.grabbedchunks.append(allchunks[self.x+1][self.y-1]) #7  1, -1
 
-    def 
+#    def 

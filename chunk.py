@@ -10,5 +10,5 @@ class Chunk:
 
 
 
-    def clear():
+#    def clear():
         
