@@ -18,14 +18,15 @@ class Vector:
         x = store
 
 class Particle:
-    def __init__(self, x, y, vx, vy, intensity, heat, size):
-        self.x  = x  # x position
-        self.y  = y  # y position
+    def __init__(self, x, y, vx, vy, intensity, heat):
+        self.x  = x  # x position within chunk
+        self.y  = y  # y position within chunk
         self.vx = vx # x vector
         self.vy = vy # y vector
-        self.intensity = intensity # interaction intensity
+        self.intensity = intensity # interaction intensity (also seen as mass, and therefore size)
         self.heat = heat # heat of particle i.e. random movement
-        self.size = size # size of particle
+        self.chunkx = 0
+        self.chunky = 0
 
     def distance(self, particle2): # returns the distance between two particles
         vecx = abs(self.x - particle2.x)
@@ -45,6 +46,10 @@ class Particle:
             curpartchunk[particle2.id].vy = curpartchunk[particle2.id].vy + vecy
         else:
             curpartchunk[particle2.id].vy = curpartchunk[particle2.id].vy - vecy
+    
+    def update(self, dt):
+        self.x += self.vx * dt
+        self.y += self.vy * dt
 
     def collide(self, particle2): # returns the new travel vectors of particles
         tempstore = particle2.vx

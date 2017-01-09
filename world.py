@@ -31,4 +31,4 @@ class World:
         out.grabbedchunks.append(allchunks[self.x  ][self.y-1]) #6  0. -1
         out.grabbedchunks.append(allchunks[self.x+1][self.y-1]) #7  1, -1
 
-#    def 
+    def 
