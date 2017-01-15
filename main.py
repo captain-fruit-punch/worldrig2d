@@ -12,12 +12,13 @@ random.seed(os.urandom)
 print("def world (in chunks)")
 
 # defaults
-worldW = 4
-worldH = 4
-#worldW = int(raw_input("world width:"))
-#worldH = int(raw_input("world height:"))
 
-world1 = world.World(worldW, worldH)
+world1init = {'wordW':4, 'worldH':4}
+
+#world1init['worldW'] = int(raw_input("world width:"))
+#world1init['worldH'] = int(raw_input("world height:"))
+
+world1 = world.World(world1init['worldW'], world1init['worldH'])
 
 tc = time.clock() # last time
 tl = 0 # time it took to execute last frame

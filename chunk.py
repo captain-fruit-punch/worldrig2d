@@ -18,13 +18,10 @@ class Chunk:
 
             self.particles.append(Particle(x, y, xv, yv, intensity, heat))
 
-    def update(self, dt, allchunks) # updates the chunk in which a particle is in
-        for particleid in xrange(0, len(self.particle)):
-            self.particles[particleid].update(dt)
-            c = self.particles[particleid]
-            if (c.x > self.w):
-                if (c.y > self.h):
-                    
+    def update(self, dt): # updates the chunk in which a particle is in
+        for i in xrange(0, len(self.particles)):
+            cp = self.particles[i] # cp for current particle
+            if (
 
     def clear():
         self.particles = []

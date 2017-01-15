@@ -3,7 +3,11 @@ import chunk
 
 class World:
     def __init__(self, w, h):
-        self.chunks = []
+        self.chunks = [] # all chunks within world
+        self.addp = [] # particles qued to be added to other chunks
+
+        t = [Chunk()] * w
+        self.chunks = t * h
 
         for x in xrange(0, w):
             hwe = [] # hwe for lack of a better name
@@ -31,4 +35,5 @@ class World:
         out.grabbedchunks.append(allchunks[self.x  ][self.y-1]) #6  0. -1
         out.grabbedchunks.append(allchunks[self.x+1][self.y-1]) #7  1, -1
 
-    def 
+    def moveparticle(self, chunkid1, particleid1, chunkid2, particleid2):
+        
