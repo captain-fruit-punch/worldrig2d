@@ -11,7 +11,7 @@ class Vector:
         self.x = x
         self.y = y
         self.currentchunk
-    
+
     def reduce():
         store = x/(x+y)
         y = y/(x+y)
@@ -42,11 +42,11 @@ class Particle:
         else:
             curpartchunk[particle2.id].vx = curpartchunk[particle2.id].vx - vecx
 
-        if (particle2.y > self.y):
+        if (particle2.y > self.y)
             curpartchunk[particle2.id].vy = curpartchunk[particle2.id].vy + vecy
         else:
             curpartchunk[particle2.id].vy = curpartchunk[particle2.id].vy - vecy
-    
+
     def update(self, dt):
         self.x += self.vx * dt
         self.y += self.vy * dt
@@ -58,4 +58,3 @@ class Particle:
         tempstore = self.vx
         self.vy = self.vx
         self.vx = tempstore
-    

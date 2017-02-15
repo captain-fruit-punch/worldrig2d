@@ -15,7 +15,7 @@ class World:
                 hwe.append(chunk.Chunk(x, y))
             self.chunks.append(hwe)
 
-    def surrounding(self, doself): 
+    def surrounding(self, doself):
         out = []
         global allchunks
         if(doself): #add self to array
@@ -36,4 +36,10 @@ class World:
         out.grabbedchunks.append(allchunks[self.x+1][self.y-1]) #7  1, -1
 
     def moveparticle(self, chunkid1, particleid1, chunkid2, particleid2):
-        
+
+    def moveparticlesfromchunks(self):
+        for cc in self.chunks:
+            for cp in cc.particles:
+                self.chunks[cc.x][cc.y].particles[cp.id]
+
+    def updateparticleids(self):
